@@ -24,8 +24,39 @@ import base64
 # background_image = "bg2.jpeg"
 # add_bg_from_local(background_image)
 
+# Load your profile image
+profile_image = Image.open("Untitled design.png")
 
-st.header("Get to know Anuj !!!")
+# Display profile image in the sidebar
+st.sidebar.image(profile_image, use_column_width=True)
+
+# Add LinkedIn, Github, and LeetCode links with icons
+st.sidebar.markdown(
+    """
+    Actively looking for full time SDE / SWE / Full Stack / Data Science roles starting from May 2024  
+      
+
+    Email : anujmaha@iu.edu / anujsmahajan1998@gmail.com  
+      
+
+    Contact : +1 8126029653  
+      
+
+    I am a strong Full stack developer with diverse skill set under my belt.    
+
+
+    [![](https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg)](https://www.linkedin.com/in/anujmaha/)   
+    [![GitHub](https://img.icons8.com/material-outlined/48/000000/github.png)](https://github.com/anujmahajan98)    
+    [Leetocde](https://leetcode.com/anujmah/)    
+    """
+)
+
+# column1, column2 = st.columns(2)
+# column1.markdown("[![](https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg)](https://www.linkedin.com/in/anujmaha/)")
+# column2.markdown("[![](https://img.icons8.com/material-outlined/48/000000/github.png)](https://github.com/anujmahajan98)")
+
+st.header("Get to know Anuj 👨🏻‍💻")
+st.header("Ask anything related to me ")
 
 if "user_prompt_history" not in st.session_state:
     st.session_state["user_prompt_history"] = []
@@ -38,7 +69,7 @@ if "chat_history" not in st.session_state:
 
 
 
-prompt = st.text_input("Prompt", placeholder="Enter your question with my name for the first prompt (eg. Who is Anuj Mahajan ?, What is his work experience ?)...")
+prompt = st.text_input("Prompt", placeholder="eg. Is it a good choice to hire him as SDE ?, What is his Tech Stack ?)...")
 
 
 if prompt:
